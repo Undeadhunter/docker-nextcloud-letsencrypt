@@ -17,11 +17,17 @@ This is a docker container that includes the letsencrypt certbot client.
 
 ## Enabling letsencrypt
 
-1. Install docker image with env variables `CERTBOT_DOMAIN="hostname"` and `CERTBOT_EMAIL="email"` make sure the hostname corresponds with the histname of the docker
+1. Install docker image with env variables `CERTBOT_DOMAIN="hostname"` and `CERTBOT_EMAIL="email"` make sure the hostname corresponds with the hostname of the docker
  
     ```
     docker run -it --name nc --hostname hostname -e CERTBOT_DOMAIN="hostname" -e CERTBOT_EMAIL="email" -p 80:80 -p 443:443 undeadhunter/nextcloud-letsencrypt
     ```
 
-2. Wait 1 minute
-3. Your host should now be accessible on  [https://serverip](https://serverip)
+1. Run the certbot script, it will use the env variables and pull your certificate
+
+    ```
+    docker exec -it nc /certbot.sh
+    ````
+
+1. Wait 1 minute
+1. Your host should now be accessible on  [https://serverip](https://serverip)

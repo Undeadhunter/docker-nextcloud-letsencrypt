@@ -4,6 +4,7 @@ RUN echo "deb http://ftp.debian.org/debian/ jessie-backports main non-free contr
 
 ENV CERTBOT_DOMAIN=""
 ENV CERTBOT_EMAIL=""
+ENV NEXTCLOUD_VERSION="9.0.52"
 
 RUN apt-get update
 #Get certbot (letsencrypt client) from Jessie Backports
@@ -26,7 +27,7 @@ WORKDIR /var/www/html
 
 
 
-RUN wget -q https://github.com/nextcloud/server/releases/download/v9.0.52/nextcloud-9.0.52.tar.bz2
+RUN wget -q https://github.com/nextcloud/server/releases/download/v9.0.52/nextcloud-$NEXTCLOUD_VERSION.tar.bz2
 RUN tar -jxvf nextcloud-9.0.52.tar.bz2 --strip-components=1
 RUN rm nextcloud-9.0.52.tar.bz2
 
@@ -39,5 +40,7 @@ RUN chmod u+x /certbot.sh
 COPY start.sh /start.sh
 RUN chmod u+x /start.sh
 
+VOLUME /var/www/html/data 
+VOLUME /var/www/html/config
 
 CMD ["/start.sh"]

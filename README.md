@@ -46,5 +46,5 @@ The following volumes might be usefull to expose
 ```
 
 These folders contain the users files and the general config files needed to configure nextcloud. 
-
+Make sure Docker has write access to those folders!
 

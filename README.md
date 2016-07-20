@@ -2,7 +2,7 @@
 
 This is a docker container that includes the letsencrypt certbot client.
 
-##Usage
+## Usage
 
 1. Install Docker
 2. Install docker image and run it
@@ -15,7 +15,7 @@ This is a docker container that includes the letsencrypt certbot client.
 3. In your browser go to the IP address of your server (eg [http://serverip](http://serverip))
 4. Follow the nextcloud setup
 
-##Enabling letsencrypt
+## Enabling letsencrypt
 
 1. Install docker image with env variables `CERTBOT_DOMAIN="hostname"` and `CERTBOT_EMAIL="email"`
  

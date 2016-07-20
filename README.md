@@ -27,7 +27,9 @@ This is a docker container that includes the letsencrypt certbot client.
 
     ```
     docker exec -it nc /certbot.sh
-    ````
+    ```
 
 1. Wait 1 minute
 1. Your host should now be accessible on  [https://serverip](https://serverip)
+
+By default all requests to HTTP will be automatically forwarded to HTTPS 

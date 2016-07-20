@@ -1,7 +1,7 @@
 ![nextcloud logo](http://i.imgur.com/rlvVJQJ.jpg) ![letsencrypt logo](https://letsencrypt.org/images/letsencrypt-logo-horizontal.svg)
 
 
-# Docker-nextcloud-letsencrypt
+# Docker + Nextcloud + Let's encrypt
 
 This is a [docker](https://hub.docker.com/r/undeadhunter/nextcloud-letsencrypt/) container that includes the letsencrypt certbot client.
 

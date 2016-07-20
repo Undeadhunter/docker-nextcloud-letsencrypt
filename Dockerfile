@@ -9,14 +9,18 @@ RUN apt-get update
 #Get certbot (letsencrypt client) from Jessie Backports
 
 RUN apt-get install -t jessie-backports -y \
-	certbot \
+	certbot 
+
+RUN apt-get install -y \
 	python-certbot-apache \
 	wget \
 	bzip2 \
-	zip zlib1g-dev\
-	php5-gd libpng-dev
+	zip zlib1g-dev \
+	php5-gd libpng-dev \
+	php5-mysql php5-pgsql libpq-dev
 
-RUN docker-php-ext-install zip gd
+
+RUN docker-php-ext-install zip gd mysqli pgsql pdo_mysql
 
 WORKDIR /var/www/html
 

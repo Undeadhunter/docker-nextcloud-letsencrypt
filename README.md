@@ -33,3 +33,18 @@ This is a docker container that includes the letsencrypt certbot client.
 1. Your host should now be accessible on  [https://serverip](https://serverip)
 
 By default all requests to HTTP will be automatically forwarded to HTTPS 
+
+## Exposing Volumes
+
+As always you can expose volumes like any other docker image 
+
+The following volumes might be usefull to expose
+
+```
+/var/www/html/data 
+/var/www/html/config
+```
+
+These folders contain the users files and the general config files needed to configure nextcloud. 
+
+

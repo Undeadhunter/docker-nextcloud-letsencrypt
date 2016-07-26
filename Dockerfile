@@ -31,13 +31,18 @@ RUN docker-php-ext-install zip gd mysqli pgsql pdo_mysql
 
 WORKDIR /var/www/html
 
+# Uninstall the build packages
+RUN apt-get remove --purge -y zlib1g-dev libpng-dev libpq-dev && rm -rf /var/lib/apt/lists/*
+
 RUN wget "https://download.nextcloud.com/server/releases/$NEXTCLOUD_BAL"
 RUN tar -jxvf $NEXTCLOUD_BAL --strip-components=1
 RUN rm $NEXTCLOUD_BAL
 
 
 COPY certbot.sh /certbot.sh
+COPY certbot.cron /certbot.cron
 RUN chmod u+x /certbot.sh
+RUN chmod u+x /certbot.cron
 
 COPY start.sh /start.sh
 RUN chmod u+x /start.sh

@@ -9,7 +9,11 @@ then
 else
 	echo "Requesting certificate using Certbot"
         certbot --apache -m ${CERTBOT_EMAIL} -d ${CERTBOT_DOMAIN} --redirect --agree-tos --non-interactive
-	echo "Request made, please try to access your server"
+	echo "Request made, please try to access your server through HTTPS"
+
+	echo "Creating CRON"
+	mv /certbot.cron /etc/cron.daily/certbot
+
 fi
 
 

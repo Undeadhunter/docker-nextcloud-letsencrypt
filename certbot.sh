@@ -13,7 +13,7 @@ else
 
 	echo "Creating CRON"
 	mv /certbot.cron /etc/cron.daily/certbot
-
+	echo "Moved CRON to cron.daily" 
 fi
 
 

@@ -3,7 +3,7 @@ FROM php:apache
 ENV CERTBOT_DOMAIN=""
 ENV CERTBOT_EMAIL=""
 
-ARG NEXTCLOUD_VERSION="9.0.53"
+ARG NEXTCLOUD_VERSION="10.0.0"
 ARG NEXTCLOUD_BAL=nextcloud-${NEXTCLOUD_VERSION}.tar.bz2
 
 RUN echo "deb http://ftp.debian.org/debian/ jessie-backports main non-free contrib" >> /etc/apt/sources.list

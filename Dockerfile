@@ -3,8 +3,8 @@ FROM php:apache
 ENV CERTBOT_DOMAIN=""
 ENV CERTBOT_EMAIL=""
 
-ARG NEXTCLOUD_VERSION="11.0.2"
-ARG NEXTCLOUD_BAL=nextcloud-${NEXTCLOUD_VERSION}.tar.bz2
+#ARG NEXTCLOUD_VERSION="11.0.2"
+#ARG NEXTCLOUD_BAL=nextcloud-${NEXTCLOUD_VERSION}.tar.bz2
 
 RUN echo "deb http://ftp.debian.org/debian/ jessie-backports main non-free contrib" >> /etc/apt/sources.list
 
@@ -34,7 +34,7 @@ WORKDIR /var/www/html
 # Uninstall the build packages
 RUN apt-get remove --purge -y zlib1g-dev libpng-dev libpq-dev && rm -rf /var/lib/apt/lists/*
 
-RUN wget "https://download.nextcloud.com/server/releases/$NEXTCLOUD_BAL"
+RUN wget "https://download.nextcloud.com/server/releases/latest.tar.bz2"
 RUN tar -jxvf $NEXTCLOUD_BAL --strip-components=1
 RUN rm $NEXTCLOUD_BAL
 

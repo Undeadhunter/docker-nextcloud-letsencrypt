@@ -35,8 +35,8 @@ WORKDIR /var/www/html
 RUN apt-get remove --purge -y zlib1g-dev libpng-dev libpq-dev && rm -rf /var/lib/apt/lists/*
 
 RUN wget "https://download.nextcloud.com/server/releases/latest.tar.bz2"
-RUN tar -jxvf $NEXTCLOUD_BAL --strip-components=1
-RUN rm $NEXTCLOUD_BAL
+RUN tar -jxvf latest.tar.bz2 --strip-components=1
+RUN rm latest.tar.bz2
 
 
 COPY certbot.sh /certbot.sh
